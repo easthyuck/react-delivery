@@ -23,11 +23,12 @@ const MealItemForm = (props) => {
 
     props.onAddToCart(enteredAmountNumber);
   };
+
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <Input
         ref={amountInputRef}
-        label="Amount"
+        label="수량"
         input={{
           id: "amount_" + props.id,
           type: "number",
@@ -37,8 +38,8 @@ const MealItemForm = (props) => {
           defaultValue: "1",
         }}
       />
-      <button>+ Add</button>
-      {!amountIsValid && <p>Please enter a valid amount (1-5)</p>}
+      <button>+ 추가</button>
+      {!amountIsValid && <p>수량내에서 선택해주세요 (1-5)</p>}
     </form>
   );
 };
